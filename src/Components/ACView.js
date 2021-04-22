@@ -1,0 +1,87 @@
+import React from 'react';
+import { MDBDataTableV5 } from 'mdbreact';
+import Header from './Header';
+export default function ACView({ acrepairs }) {
+
+  const [datatable] = React.useState({
+
+    columns: [
+      {
+        label: 'Name',
+        field: 'Name',
+        width: 150,
+        attributes: {
+          'aria-controls': 'DataTable',
+          'aria-label': 'Name',
+        },
+      },
+      
+      {
+        label: 'Mobile',
+        field: 'MobileNo',
+        sort: 'disabled',
+        width: 100,
+      },
+      {
+        label: 'AveragePrice',
+        field: 'Price',
+
+        width: 200,
+      },
+      {
+        label: 'Gender',
+        field: 'Gender',
+        width: 100,
+      },
+      {
+        label: 'City',
+        field: 'City',
+        width: 100,
+      },
+      {
+        label: 'Description',
+        field: 'Description',
+
+        width: 200,
+      },
+    ],
+    rows: [{
+        Name:"Ravi",
+        MobileNo:"9922382290",
+        Price:"290",
+        Gender:"M",
+        City:"Moga",
+        Description:"HI"
+
+    }],
+
+  });
+    return (
+        <>
+        <Header/>
+      <div className="container fluid">
+        <div className="row">
+          <div className="col-12 container-fluid">
+            <h2 className="feature-heading ">AC Service/Repair</h2>
+            <hr className="feature-line" />
+          </div>
+        </div>
+        <div>
+          <MDBDataTableV5
+            hover
+            responsiveMd
+            bordered
+            entriesOptions={[5, 20, 25]}
+            entries={5}
+            pagesAmount={4}
+            data={datatable}
+            pagingTop
+            searchTop
+            searchBottom={false}
+            scrollX
+          />
+        </div>
+      </div>
+      </>
+    );
+  }
