@@ -25,6 +25,7 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "vader-sentiment": "^1.1.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
