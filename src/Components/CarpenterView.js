@@ -45,16 +45,7 @@ export default function CarpenterView({ carpenters }) {
         width: 200,
       },
     ],
-    rows: [{
-        Name:"Ravi",
-        MobileNo:"9922382290",
-        Price:"290",
-        Gender:"M",
-        City:"Moga",
-        Description:"HI"
-
-    }],
-
+    rows:carpenters
   });
     return (
         <>

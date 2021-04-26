@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, FormGroup, Label, Input, FormFeedback,Card, CardBody, CardHeader } from 'reactstrap';
-function SignupForm() {
+import {baseUrl} from '../shared/baseURL';
+function SignupForm(props) {
 
     const [initialState, setState] = useState({
         Username: '',
@@ -32,15 +33,77 @@ function SignupForm() {
 
     const handleSubmitClick = (event) => {
         console.log(initialState);
-        event.preventDefault();
-    }
 
-    const handleCustomerRegister = (event)=>{
-        event.preventDefault()
-    }
+        let customer_or_service_provider=false
+        if (initialState.customer_or_service_provider=="true"){
+            customer_or_service_provider=true
+        }
 
-    const handleServiceProviderRegister = (event)=>{
-        event.preventDefault()
+        let new_user = {
+            username:initialState.Username,
+            password:initialState.password,
+            service_provider:customer_or_service_provider,
+            admin:customer_or_service_provider
+        }
+
+        fetch(baseUrl + 'users/signup', {
+            method: 'POST',
+            body: JSON.stringify(new_user),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response;
+                }
+                else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            },
+                error => {
+                    var errmess = new Error(error.message);
+                    throw errmess;
+                })
+            .then(response => response.json())
+            .then(response => { alert("Registeration Successfully!!");})
+            .catch(error => {
+                console.log('Registeration ', error.message);
+                alert(' Could not be Registered\nError: ' + error.message);
+            })
+
+            if(customer_or_service_provider===false){
+                var newCustomer = {
+                    Username:initialState.Username,
+                    Name:initialState.Name,
+                    MobileNo:initialState.MobileNo,
+                    Gender:initialState.Gender,
+                    City:initialState.City,
+                    Address:initialState.Address,
+                    Email:initialState.Email
+                }
+                props.postCustomer(newCustomer);
+            }
+
+            else if(customer_or_service_provider===true){
+                const newServiceProvider = {
+                    Username:initialState.Username,
+                    Name:initialState.Name,
+                    MobileNo:initialState.MobileNo,
+                    Price:initialState.Price,
+                    Gender:initialState.Gender,
+                    City:initialState.City,
+                    Email:initialState.Email,
+                    Occupation:initialState.Occupation,
+                    Description:initialState.Description,
+                }
+                console.log(newServiceProvider)
+                props.postServiceProvider(newServiceProvider);
+            }
+            event.preventDefault();
+
     }
 
     const handleBlur = (field) => (evt) => {
@@ -154,7 +217,7 @@ if(initialState.customer_or_service_provider=="false"){
 
                     {
                         <CardBody>
-                            <Form onSubmit={handleCustomerRegister}>
+                            <Form >
                                 <FormGroup>
                                     <Label htmlFor="Name" className="d-flex justify-content-start"><h6>Name</h6></Label>
                                     <Input required type="text" id="Name" name="Name" value={initialState.Name}
@@ -196,7 +259,6 @@ if(initialState.customer_or_service_provider=="false"){
                                         onChange={handleInputChange} valid={errors.Email === ''} invalid={errors.Email !== ''} onBlur={handleBlur('Email')} />
                                     <FormFeedback>{errors.Email}</FormFeedback>
                                 </FormGroup>
-                                <button type="submit" value="submit" className="color btn btn-primary btn-md btn-block mt-2" ><span className="fa fa-sign-in-alt fa-lg"></span>Send {initialState.Username} Information</button>
                             </Form>
                         </CardBody>}
                 </Card>
@@ -218,7 +280,7 @@ else if(initialState.customer_or_service_provider=="true"){
 
                     {
                         <CardBody>
-                            <Form onSubmit={handleServiceProviderRegister}>
+                            <Form >
                                 <FormGroup>
                                     <Label htmlFor="Name" className="d-flex justify-content-start"><h6>Name</h6></Label>
                                     <Input required type="text" id="Name" name="Name" value={initialState.Name}
@@ -283,7 +345,7 @@ else if(initialState.customer_or_service_provider=="true"){
                                         onChange={handleInputChange} valid={errors.Email === ''} invalid={errors.Email !== ''} onBlur={handleBlur('Email')} />
                                     <FormFeedback>{errors.Email}</FormFeedback>
                                 </FormGroup>
-                                <button type="submit" value="submit" className="color btn btn-primary btn-md btn-block mt-2" ><span className="fa fa-sign-in-alt fa-lg"></span>Send {initialState.Username} Information</button>
+                                
                             </Form>
                         </CardBody>}
                 </Card>

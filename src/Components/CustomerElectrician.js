@@ -23,9 +23,11 @@ class CustomerElectrician extends Component{
                 return(
                         <div className="col-6 mt-3">
                             <div className="card">
+                            <Link to={`/Customer/${Electrician.ServiceProvider_Username}`}>
                                 <div className="card-header color" style={{fontWeight:'bold'},{fontSize:"20px"}}>
                                     {Electrician.ServiceProvider_Username}
                                 </div>
+                                </Link>
                                 <div className="card-body">
                                     <div className="row">
                                         <h5 className="card-title col-md-5">Name: {Electrician.ServiceProvider_Username}
@@ -56,12 +58,12 @@ class CustomerElectrician extends Component{
                                     <div className="row">
                                         <div className="col-md-6">
                                             <Link to={`/Customer/Booking/${Electrician.ServiceProvider_Username}`}>
-                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  ><span className="fa fa-sign-in-alt fa-lg"></span>Book Service</button>
+                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  >Book Service</button>
                                             </Link>
                                         </div>
                                         <div className="col-md-6">
                                             <Link to={`/Customer/Feedback/${Electrician.ServiceProvider_Username}`}>
-                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  ><span className="fa fa-sign-in-alt fa-lg"></span>Feedback</button>
+                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  >Feedback</button>
                                             </Link>
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Card} from 'reactstrap';
 import {Link} from 'react-router-dom';
+
 class CustomerPlumbers extends Component{
 
     constructor(props){
@@ -22,9 +22,11 @@ class CustomerPlumbers extends Component{
                 return(
                         <div className="col-md-6 mt-3">
                             <div className="card">
+                                <Link to={`/Customer/${plumber.ServiceProvider_Username}`}>
                                 <div className="card-header color" style={{fontWeight:'bold'},{fontSize:"20px"}}>
                                     {plumber.ServiceProvider_Username}
                                 </div>
+                                </Link>
                                 <div className="card-body">
                                     <div className="row">
                                         <h5 className="card-title col-md-5">Name: {plumber.ServiceProvider_Username}
@@ -55,12 +57,12 @@ class CustomerPlumbers extends Component{
                                     <div className="row">
                                         <div className="col-md-6">
                                             <Link to={`/Customer/Booking/${plumber.ServiceProvider_Username}`}>
-                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  ><span className="fa fa-sign-in-alt fa-lg"></span>Book Service</button>
+                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  >Book Service</button>
                                             </Link>
                                         </div>
                                         <div className="col-md-6">
                                             <Link to={`/Customer/Feedback/${plumber.ServiceProvider_Username}`}>
-                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  ><span className="fa fa-sign-in-alt fa-lg"></span>Feedback</button>
+                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  >Feedback</button>
                                             </Link>
                                         </div>
                                     </div>

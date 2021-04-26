@@ -58,10 +58,10 @@ class AboutUs extends Component{
                         <h5 className="card-title">Aaryan Sharma</h5>
                         <p className="card-text">Role</p>
                         <a href="https://www.linkedin.com/in/aaryan-sharma/" target="_blank">
-                            <i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                            <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
                         <a href="https://github.com/Aaryan8751" target="_blank">
-                            <i style={{color:'black'}} className="fa fa-github fa-2x ml-2 " aria-hidden="true"></i>
+                            <i style={{color:'black'}} className="fab fa-github fa-2x ml-2 " aria-hidden="true"></i>
                         </a>
                     </div>
                     </div>
@@ -72,10 +72,10 @@ class AboutUs extends Component{
                         <h5 className="card-title">Pratikshit Agrahari</h5>
                         <p className="card-text">Role</p>
                         <a href="https://www.linkedin.com/in/pratikshitagrahari/" target="_blank">
-                            <i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                            <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
                         <a href="https://github.com/Pratikshit09" target="_blank">
-                            <i style={{color:'black'}} className="fa fa-github fa-2x ml-2" aria-hidden="true"></i>
+                            <i style={{color:'black'}} className="fab fa-github fa-2x ml-2" aria-hidden="true"></i>
                         </a>
                     </div>
                     </div>
@@ -86,10 +86,10 @@ class AboutUs extends Component{
                         <h5 className="card-title">Naman Cheetu</h5>
                         <p className="card-text">Role</p>
                         <a href="https://www.linkedin.com/in/naman-cheetu-135455188/" target="_blank">
-                            <i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                            <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
                         <a href="https://github.com/namancheetu" target="_blank">
-                            <i style={{color:'black'}} className="fa fa-github fa-2x ml-2" aria-hidden="true"></i>
+                            <i style={{color:'black'}} className="fab fa-github fa-2x ml-2" aria-hidden="true"></i>
                         </a>
                     </div>
                     </div>
@@ -100,10 +100,10 @@ class AboutUs extends Component{
                         <h5 className="card-title">Kunal Mahajan</h5>
                         <p className="card-text">Role</p>
                         <a href="https://www.linkedin.com/in/kunal-mahajan-431b97189/" target="_blank">
-                            <i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                            <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
                         <a href="https://github.com/kunalmahajan12" target="_blank">
-                            <i style={{color:'black'}} className="fa fa-github fa-2x ml-2 " aria-hidden="true"></i>
+                            <i style={{color:'black'}} className="fab fa-github fa-2x ml-2 " aria-hidden="true"></i>
                         </a>
                     </div>
                     </div>
