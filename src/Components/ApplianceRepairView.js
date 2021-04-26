@@ -45,16 +45,7 @@ export default function ApplianceView({ appliances }) {
         width: 200,
       },
     ],
-    rows: [{
-        Name:"Ravi",
-        MobileNo:"9922382290",
-        Price:"290",
-        Gender:"M",
-        City:"Moga",
-        Description:"HI"
-
-    }],
-
+    rows:appliances
   });
     return (
         <>

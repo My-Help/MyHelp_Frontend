@@ -1,5 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
+const vader = require('vader-sentiment');
+
 
 class ServiceProviderProfile extends Component {
     constructor(props) {
@@ -8,19 +10,37 @@ class ServiceProviderProfile extends Component {
             Feedback:[
 
             ],
+            positive_feedback:"",
+            negative_feedback:"",
         }
     }
 
     componentDidMount(){
+        
+        let pos = 0 
+        let neg = 0
+        let x = this.props.feedbacks.length
+        let i =0
+        for(i=0;i<x;i++){
+            var input = this.props.feedbacks[i].Description
+            var intensity = vader.SentimentIntensityAnalyzer.polarity_scores(input);
+            if (intensity.pos>intensity.neg){
+                pos+=1
+            }
+            else{
+                neg+=1
+            }
+        }
         this.setState({
-            Feedback:this.props.feedbacks
+            Feedback:this.props.feedbacks,
+            positive_feedback:pos,
+            negative_feedback:neg
         }
         );
     }
 
     
     render() {
-        console.log(this.props)
         let ServiceProvider = null;
         if (this.props.serviceProvider != null) {
             ServiceProvider = this.props.serviceProvider
@@ -94,22 +114,61 @@ class ServiceProviderProfile extends Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="row container-fluid ">
+                <div className="col-md-6 mt-3 ">
+                <div className="card">
+                        <div className="card-header color text-white">
+                                <h2>
+                                    Positive Feedbacks
+                                </h2>
+                            </div>
+                        <div className="card-body">
+                            <div className="row">
+                                    <h3 className="col-sm-4">Count</h3>
+                                    <h3 className="col-sm-6  d-flex justify-content-end">{this.state.positive_feedback}</h3>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+                <div className="col-md-6 mt-3">
+                <div className="card">
+                        <div className="card-header color text-white">
+                                <h2>
+                                    Negative Feedbacks
+                                </h2>
+                            </div>
+                        <div className="card-body">
+                            <div className="row">
+                                    <h3 className="col-sm-4">Count</h3>
+                                    <h3 className="col-sm-6  d-flex justify-content-end">{this.state.negative_feedback}</h3>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+
+            </div>
+                
+
                 <div className="row">
                     <div className="col-12 container-fluid mt-2">
                         <h2 className="feature-heading container-fluid">FeedBack</h2>
                         <hr className="feature-line" />
                     </div>
                 </div>
-                <div className="row">
+
+                <div className="row list-unstyled">
                     {this.state.Feedback.map((feed)=>{
                         return(
                             <ul>
-                                <li>
-                                <div className="col-12 mb-2 mt-2">
-                                <p><strong>{feed.Description}</strong> -{feed.Customers_Username}</p>     
+                                <li >
+                                <div className="row mb-2 mt-2" >
+                                    <div className="col-sm-12">
+                                        <p><strong>{feed.Description}</strong> -{feed.Customers_Username}</p>
+                                    </div>    
                             </div>
                                 </li>
-                            
                             </ul>
                         );
                     })}
