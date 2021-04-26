@@ -91,7 +91,7 @@ function LoginForm(props) {
                                         <p>Remember Me</p>
                                     </Label>
                                 </FormGroup>
-                                <button type="submit" value="submit" className="btn btn-primary btn-md btn-block mt-2 color"  ><span className="fa fa-sign-in-alt fa-lg"></span>Login</button>
+                                <button type="submit" value="submit" className="btn btn-primary btn-md btn-block mt-2 color"  >Login</button>
                             </Form>
                             {props.auth.errMess && <div><p>{props.auth.errMess} Please try again</p></div>}
                         </CardBody>}

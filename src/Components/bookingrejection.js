@@ -47,6 +47,9 @@ export default function BookingRejection({ bookings }) {
       {
         label: 'Actions',
         field: 'Action',
+        default: <div>
+          <i className="fa fa-trash-alt delete"></i>
+        </div>,
         width: 100,
       },
 
@@ -65,6 +68,7 @@ export default function BookingRejection({ bookings }) {
           <MDBDataTableV5
             hover
             responsiveMd
+            bordered
             entriesOptions={[5, 20, 25]}
             entries={5}
             pagesAmount={4}

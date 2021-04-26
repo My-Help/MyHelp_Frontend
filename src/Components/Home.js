@@ -19,7 +19,9 @@ class Home extends Component{
                 <div className="col-md-4 mt-3 ">
                     <div className="card ">
                         <div className="card-body">
-                            <h5 className="card-title">Plumber</h5>
+                            <div className="row">
+                                <h5 className="card-title col-6 container-fluid">Plumber</h5>
+                            </div>
                             <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
                             <p className="card-text">
                             Content
@@ -37,7 +39,7 @@ class Home extends Component{
                             <p className="card-text">
                             Content
                             </p>
-                            <a href="/CarpenterView" className="card-link">Card link</ a>
+                            <a href="/CarpenterView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
@@ -50,7 +52,7 @@ class Home extends Component{
                             <p className="card-text">
                             Content
                             </p>
-                            <a href="/ElectricianView" className="card-link">Card link</ a>
+                            <a href="/ElectricianView" className="card-link">Details</ a>
                         </div>
                     </div>
                     
@@ -66,7 +68,7 @@ class Home extends Component{
                             <p className="card-text">
                             Content
                             </p>
-                            <a href="/ACView" className="card-link">Card link</ a>
+                            <a href="/ACView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
@@ -79,7 +81,7 @@ class Home extends Component{
                             <p className="card-text">
                             Content
                             </p>
-                            <a href="/BarberView" className="card-link">Card link</ a>
+                            <a href="/BarberView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
@@ -92,7 +94,7 @@ class Home extends Component{
                             <p className="card-text">
                             Content
                             </p>
-                            <a href="/ApplianceView" className="card-link">Card link</ a>
+                            <a href="/ApplianceView" className="card-link">Details</ a>
                         </div>
                     </div>
                     
