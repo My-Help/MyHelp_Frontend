@@ -85,7 +85,7 @@ function Contact(props) {
                 <div className="col-12 col-md-4 offset-md-2">
 
                     <a href="http://maps.google.com/?q=Punjab Engineering College, Sector-12" target="_blank" rel="noreferrer noopener"><i class="fas fa-map-marker-alt fa-2x "></i></a><div className="text"><p><strong>Location:</strong><br />Punjab Engineering College, Sector-12,<br />Chandigarh, 160012</p></div>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=myHelp@gmail.com" target="_blank" rel="noreferrer noopener"> <i className="fa fa-envelope fa-2x info" target="_blank"></i></a><div className="text"><p><strong>Email:</strong><br />MyHelpPEC@gmail.com</p></div>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=pecmyhelp@gmail.com" target="_blank" rel="noreferrer noopener"> <i className="fa fa-envelope fa-2x info" target="_blank"></i></a><div className="text"><p><strong>Email:</strong><br />pecmyhelp@gmail.com</p></div>
                     <a href="tel:+1722753071" target="_blank" rel="noreferrer noopener"> <i class="fa fa-phone fa-2x info" aria-hidden="true"></i></a><div className="text"><p><strong>Call:</strong><br />+91-9988472289</p></div>
                 </div>
 
