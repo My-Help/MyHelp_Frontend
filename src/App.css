@@ -45,7 +45,9 @@
 }
 
 .leftNav{
-  background-color: rgb(233, 243, 242);
+  background-color: #14274e;
+  border-style: solid;
+  border-color: azure;
 }
 .leftNav {
   font-size: large;
@@ -66,9 +68,23 @@
   color: #eaeff3;
 }
 
-.col1{
-  color:"white"
+.navcol{
+  color:white
 }
-.NavbarToggler{
-  color:white;
+
+
+.head{
+  background-repeat:no-repeat;
+  background-position:bottom right;
+  width: 100%;
+  background-size: contain;
+ 
+}
+
+.demo-bg {
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url(https://ps.w.org/ultimate-member/assets/banner-772x250.png?rev=2143172)
+}
+
+.boxsh{
+  box-shadow:0px 5px 25px rgba(0, 0, 0, 0.2);
 }

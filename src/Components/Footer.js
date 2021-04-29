@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -12,7 +13,7 @@ function Footer() {
 
                     <a href="#" className="social-icon" target="_blank" ><i className="fab fa-linkedin-in fa-2x"></i></a>
 
-                    <a href="mailto:#" className="social-icon"><i className="fa fa-envelope fa-2x" target="_blank"></i></a>
+                    <a href="mailto:MyHelpPEC@gmail.com" className="social-icon"><i className="fa fa-envelope fa-2x" target="_blank"></i></a>
 
                 </div>
             </div>

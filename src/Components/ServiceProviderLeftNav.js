@@ -20,21 +20,30 @@ export default class ServiceProviderLeftNav extends Component {
   render() {
     return (
       <div className="leftNav container-fluid">
-        <Navbar light expand="md" className="me" >
-          <NavbarToggler onClick={this.toggleNav} />
+        <Navbar light expand="sm" className="me" >
+          <NavbarToggler style={{backgroundColor:"white"}} onClick={this.toggleNav} />
           <Collapse isOpen={this.state.isNavOpen} navbar >
             <Nav navbar className="flex-column">
               <NavItem>
                 <Link className="nav-link" to="/ServiceProvider/Profile">
-                  Profile
+                  <span className="navcol">
+                  <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </span>
               </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/ServiceProvider/Bookings">Bookings
+                <Link className="nav-link" to="/ServiceProvider/Bookings">
+                <span className="navcol">
+                <i class="far fa-file-alt"></i> Bookings
+                  </span>
               </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/ServiceProvider/Bookings Rejection">Bookings Rejection</Link>
+                <Link className="nav-link" to="/ServiceProvider/Bookings Rejection">
+                <span className="navcol">
+                <i class="fas fa-trash-alt    "></i> Bookings Rejection
+                  </span>
+                </Link>
               </NavItem>
             </Nav>
           </Collapse>

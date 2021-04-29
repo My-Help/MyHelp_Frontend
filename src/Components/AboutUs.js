@@ -11,52 +11,56 @@ class AboutUs extends Component{
             </div>
 
         <Jumbotron style={{margin:0}}>
-            <div>
+           
             <div className="row">
-            <div className="col-lg-6">
-                <h3>Who are we and what we do?
-                    <hr className="w-75 float-left"/>
+            <div className="col-sm-6">
+                <div className="row">
+                
+                <h3 className="container-fluid">Who are we and what we do?
                 </h3>
+                    <hr className="w-100"/>
+                     
+                </div>
+                
+                <div className="row container-fluid">
+                <p>
+                        MyHelp provides local service providers a platform to provide services to the customer and increase their reach. It also helps customers book reliable home services like beauty services, massage therapy, cleaning, plumbing,carpentry, appliance repair, painting etc to empower millions of service professionals across the world to deliver services at home like never before. 
+                        
+                        </p>
+                        <p>
+                        Once on the platform, our match-making algorithm identifies which service provider are closest to the users' requirements and available at the requested time and date.
+                        </p>
+                </div>
+                        
+                
                 
             </div>
-            <div className="col-lg-6">
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                dicta minus molestiae vel beatae natus eveniet ratione temporibus
-                aperiam harum alias officiis assumenda officia quibusdam deleniti
-                eos cupiditate dolore doloribus!
-                </p>
-                <p>
-                Ad dolore dignissimos asperiores dicta facere optio quod commodi
-                nam tempore recusandae. Rerum sed nulla eum vero expedita ex
-                delectus voluptates rem at neque quos facere sequi unde optio
-                aliquam!
-                </p>
-                <p>
-                Tenetur quod quidem in voluptatem corporis dolorum dicta sit
-                pariatur porro quaerat autem ipsam odit quam beatae tempora
-                quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur
-                at!
-                </p>
+            <div className='offset-1 col-sm-5 mt-2'>
+                <img className="w-75" src="./images/team.png" alt="" />
+                </div>
+            <div className="row">
+            
+            
             </div>
+            
             </div>
-        </div>
         <Jumbotron style={{margin:0}}>
         <div className="row">
-          <div className="col-md-6 ">
+          <div className="col-sm-12 ">
             <h5 className="d-flex justify-content-center">MEET THE TEAM</h5>
-            <h6>
+            <h6 className="d-flex justify-content-center">
               “Individuals can and do make a difference, but it takes a team to
               really mess things up.”
-              
-              <hr className="w-90"/>
             </h6>
+            
+            <hr className="w-90"/>
+
             <div className="row">
                 <div className="col-md-3 mt-1">
                     <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Aaryan Sharma</h5>
-                        <p className="card-text">Role</p>
+                        <p className="card-text">Full Stack Web Developer</p>
                         <a href="https://www.linkedin.com/in/aaryan-sharma/" target="_blank">
                             <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
@@ -70,7 +74,7 @@ class AboutUs extends Component{
                     <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Pratikshit Agrahari</h5>
-                        <p className="card-text">Role</p>
+                        <p className="card-text">Frontend Developer</p>
                         <a href="https://www.linkedin.com/in/pratikshitagrahari/" target="_blank">
                             <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
@@ -84,7 +88,7 @@ class AboutUs extends Component{
                     <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Naman Cheetu</h5>
-                        <p className="card-text">Role</p>
+                        <p className="card-text">Frontend Developer</p>
                         <a href="https://www.linkedin.com/in/naman-cheetu-135455188/" target="_blank">
                             <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
@@ -98,7 +102,7 @@ class AboutUs extends Component{
                     <div className="card">
                     <div className="card-body">
                         <h5 className="card-title">Kunal Mahajan</h5>
-                        <p className="card-text">Role</p>
+                        <p className="card-text">Backend Developer</p>
                         <a href="https://www.linkedin.com/in/kunal-mahajan-431b97189/" target="_blank">
                             <i className="fab fa-linkedin-square fa-2x" aria-hidden="true"></i>
                         </a>
@@ -111,9 +115,7 @@ class AboutUs extends Component{
 
             </div>
           </div>
-          <div className='offset-1 col-lg-5'>
-            <img className="w-75" src="./images/team.png" alt="" />
-          </div>
+          
         </div>
       </Jumbotron>
       </Jumbotron>

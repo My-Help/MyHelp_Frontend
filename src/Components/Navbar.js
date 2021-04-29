@@ -34,38 +34,39 @@ class Navbar1 extends Component{
             }
         return(
             
-            <Navbar light  expand="sm">
+            <Navbar light style={{backgroundColor:"#14274e"}}   expand="sm">
                     <NavbarBrand href="/home">
-                        MyHelpLogo
+                    <img src="./images/my help logo light.png" width="200"
+                                alt="MyHelpLogo" />
                     </NavbarBrand>
-                        <NavbarToggler  onClick={this.toggleNav} />
-                        <Collapse   isOpen={this.state.isNavOpen} navbar>
+                        <NavbarToggler style={{backgroundColor:"white"}}  onClick={this.toggleNav} />
+                        <Collapse  isOpen={this.state.isNavOpen} navbar>
                             <ul className="navbar-nav mr-auto" >
                                 <li className="nav-item ">
                                     <Link className="nav-link"  to="/home">
-                                        <span >
-                                            Home
+                                        <span className="navcol" >
+                                        <span className="fa fa-home fa-lg"></span> Home
                                         </span>
                                     </Link>
                                     </li>
                                     <li className="nav-item">
                                     <Link className="nav-link" to="/aboutus">
-                                        <span >
-                                        About Us
+                                        <span  className="navcol">
+                                        <span className="fa fa-info fa-lg"></span> About Us
                                         </span>
                                     </Link>
                                     </li>
                                     <li className="nav-item">
                                     <Link className="nav-link" to="/contactus">
-                                        <span >
-                                        Contact Us
+                                        <span className="navcol" >
+                                        <span className="fa fa-address-card fa-lg"></span> Contact Us
                                         </span>
                                     </Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/Login">
-                                            <span>
-                                            Profile
+                                            <span className="navcol">
+                                            <i class="fa fa-user" aria-hidden="true"></i> Go to Profile
                                             </span>
                                         </Link>
                                     </li>
@@ -81,8 +82,9 @@ class Navbar1 extends Component{
 
 function LoginButton(props) {
     return (
-    <><Link className="btn btn-outline-info my-2 my-sm-0" to="/Login" style={{color:"white"}}> Login</Link>
-    <Link className="btn btn-outline-info my-2 my-sm-0 ml-3" to="/register" style={{color:"white"}}> Register </Link></> );
+    <><Link className="btn btn-outline-info my-2 my-sm-0" to="/Login" style={{color:"white"}}>
+        <i class="fa fa-user-circle" aria-hidden="true"></i> Login</Link>
+    <Link className="btn btn-outline-info my-2 my-sm-0 ml-3" to="/register" style={{color:"white"}}> <span className="fa fa-sign-in-alt fa-lg"></span> Register </Link></> );
 }
 
 function LogoutButton(props) {

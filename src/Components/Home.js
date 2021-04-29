@@ -8,7 +8,7 @@ class Home extends Component{
             <>
             
         <Header/>
-        <Jumbotron className="container-fluid">
+        <Jumbotron  className="container-fluid " style={{backgroundColor:"white"}}>
             <div className="row">
                 <div className="col-12">
                     <h4 className="d-flex justify-content-center"> Services We Provide </h4>
@@ -17,41 +17,32 @@ class Home extends Component{
             </div>
             <div className="row ">
                 <div className="col-md-4 mt-3 ">
-                    <div className="card ">
+                    <div className="card head" style={{backgroundImage:`url(./images/Plumber.png)`,boxShadow:"0px 5px 25px rgba(0, 0, 0, 0.2)"}}>
                         <div className="card-body">
                             <div className="row">
-                                <h5 className="card-title col-6 container-fluid">Plumber</h5>
+                                <h5 className="card-title col-6 mb-5" >Plumber</h5>
                             </div>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            
                             <a href="/PlumberView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3">
-                    <div className="card">
+                    <div className="card head" style={{backgroundImage:`url(./images/Carpenter.png)`,boxShadow:"0px 5px 25px rgba(0, 0, 0, 0.2)"}}>
                         <div className="card-body">
-                            <h5 className="card-title">Carpenter</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Carpenter</h5>
+                            
                             <a href="/CarpenterView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3 ">
-                        <div className="card">
+                        <div className="card head" style={{backgroundImage:`url(./images/Elec.png)`,boxShadow:"0px 5px 25px rgba(0, 0, 0, 0.2)"}}>
                         <div className="card-body">
-                            <h5 className="card-title">Electrician</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Electrician</h5>
+                            
                             <a href="/ElectricianView" className="card-link">Details</ a>
                         </div>
                     </div>
@@ -61,39 +52,30 @@ class Home extends Component{
             </div>
             <div className="row ">
                 <div className="col-md-4 mt-3 ">
-                    <div className="card ">
+                    <div className="card head " style={{backgroundImage:`url(./images/AC.png)`,boxShadow:"0px 5px 25px rgba(0, 0, 0, 0.2)"}}>
                         <div className="card-body">
-                            <h5 className="card-title">AC Service/Repair</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">AC Service/Repair</h5>
+                            
                             <a href="/ACView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3">
-                    <div className="card">
+                    <div className="card head" style={{backgroundImage:`url(./images/barber.png)`,boxShadow:"0px 5px 25px rgba(0, 0, 0, 0.2)"}}>
                         <div className="card-body">
-                            <h5 className="card-title">Barber</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Barber</h5>
+                            
                             <a href="/BarberView" className="card-link">Details</ a>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3 ">
-                        <div className="card">
+                        <div className="card head" style={{backgroundImage:`url(./images/Repair.png)`,boxShadow:"0px 5px 25px rgba(0, 0, 0, 0.2)"}}>
                         <div className="card-body">
-                            <h5 className="card-title">Appliance Repair</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Appliance Repair</h5>
+                            
                             <a href="/ApplianceView" className="card-link">Details</ a>
                         </div>
                     </div>
