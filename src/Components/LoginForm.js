@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, withRouter } from 'react-router-dom';
-import { Form, FormGroup, Label, Input, FormFeedback,Card, CardBody, CardHeader } from 'reactstrap';
+import { Form, FormGroup,Jumbotron, Label, Input, FormFeedback,Card, CardBody, CardHeader } from 'reactstrap';
 
 function LoginForm(props) {
 
@@ -61,6 +61,10 @@ function LoginForm(props) {
     const errors = validate(initialState.username, initialState.password);
 
         return (
+            <>
+            <Jumbotron style={{backgroundImage:`url(./images/loginbanner.jpg)`,backgroundSize:"cover",paddingTop:"10%",paddingBottom:"11%"}}>
+
+            </Jumbotron>
             <div className="row container-fluid">
                 <div className="col-md-4 offset-1 mt-5 mb-5">
                     <img className="img-fluid" style={{height:"auto"}} src="./images/login.png" alt="" />
@@ -97,6 +101,7 @@ function LoginForm(props) {
                         </CardBody>}
                 </Card>
             </div>
+            </>
         )
 }
 

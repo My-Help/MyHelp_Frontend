@@ -4,14 +4,17 @@ import {Jumbotron} from 'reactstrap';
 class Header extends Component{
     render(){
         return(
-            <Jumbotron>
+            <Jumbotron style={{backgroundImage:`url(https://gust-production.s3.amazonaws.com/uploads/startup/panoramic_image/911706/jumbotron-bg.png)`,backgroundPosition:"center",backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
                 <div className="row">
-                    <div className="conatiner-fluid col-7 ">
-                        <h1>My Help</h1>
-                        <hr />
+                    <div className="conatiner-fluid col-sm-7 " style={{backgroundColor:'#14274e',color:'white',opacity:0.7,marginLeft:"6%"}}>
+                        <h1 className="container-fluid" style={{paddingTop:"2%"}}>My Help</h1>
+                        <hr color="white" className="w-60" />
                         <p className="container-fluid d-flex justify-content-center">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                        MyHelp is a platform for both the local service providers and customers to interact with
+each other for mutual benefits. It is an unconventional platform where the website acts
+as a platform for service providers to sell their service at their own price unlike the
+conventional form of service providing where the company actually employs people to
+provide service.
                         </p>
                     </div>
             </div>

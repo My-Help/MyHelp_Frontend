@@ -15,39 +15,30 @@ class Services extends Component{
             </div>
             <div className="row ">
                 <div className="col-md-4 mt-3 ">
-                    <div className="card ">
+                    <div className="card head boxsh" style={{backgroundImage:`url(https://i.ibb.co/HgK7B3f/Plumber.png)`}}>
                         <div className="card-body">
-                            <h5 className="card-title">Plumber</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Plumber</h5>
+                            
                             <Link to="/Customer/Plumbers" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3">
-                    <div className="card">
+                    <div className="card head boxsh" style={{backgroundImage:`url(https://i.ibb.co/M2gxKzJ/Carpenter.png)`}}>
                         <div className="card-body">
-                            <h5 className="card-title">Carpenter</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Carpenter</h5>
+                            
                             <Link to="/Customer/Carpenters" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3 ">
-                        <div className="card">
+                        <div className="card head boxsh" style={{backgroundImage:`url(https://i.ibb.co/L0MtKKt/Elec.png)`}}>
                         <div className="card-body">
-                            <h5 className="card-title">Electrician</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Details</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Electrician</h5>
+                            
                             <Link to="/Customer/Electricians" className="card-link">Details</ Link>
                         </div>
                     </div>
@@ -57,39 +48,30 @@ class Services extends Component{
             </div>
             <div className="row ">
                 <div className="col-md-4 mt-3 ">
-                    <div className="card ">
+                    <div className="card head boxsh" style={{backgroundImage:`url(https://i.ibb.co/qFPV9GG/AC.png)`}}>
                         <div className="card-body">
-                            <h5 className="card-title">AC Service/Repair</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Details</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">AC Service/Repair</h5>
+                            
                             <Link to="/Customer/AC ServiceRepair" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3">
-                    <div className="card">
+                    <div className="card head boxsh" style={{backgroundImage:`url(https://i.ibb.co/xH99m7D/Barber.png)`}}>
                         <div className="card-body">
-                            <h5 className="card-title">Barber</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Barber</h5>
+                            
                             <Link to="/Customer/Barbers" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
 
                 <div className="col-md-4 mt-3 ">
-                        <div className="card">
+                        <div className="card head boxsh" style={{backgroundImage:`url(https://i.ibb.co/BnjBsNR/Repair.png)`}}>
                         <div className="card-body">
-                            <h5 className="card-title">Appliance Repair</h5>
-                            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p className="card-text">
-                            Content
-                            </p>
+                            <h5 className="card-title mb-5">Appliance Repair</h5>
+                            
                             <Link to="/Customer/Appliance Repair" className="card-link">Details</ Link>
                         </div>
                     </div>

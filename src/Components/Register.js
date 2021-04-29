@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, FormGroup, Label, Input, FormFeedback,Card, CardBody, CardHeader } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormFeedback,Card, CardBody, CardHeader,Jumbotron } from 'reactstrap';
 import {baseUrl} from '../shared/baseURL';
 function SignupForm(props) {
 
@@ -163,7 +163,9 @@ function SignupForm(props) {
 
     const errors = validate(initialState.Username,initialState.password,initialState.repassword,initialState.Name,initialState.MobileNo,initialState.Email,initialState.City);
 
-    const base = (<Card className="mt-5 mb-5">
+    const base = (
+    <>
+    <Card className="mt-5 mb-5">
     <CardHeader className="color mt-3 d-flex justify-content-start " ><h4 className=" mt-2 ">Sign-up</h4></CardHeader>
 
     {
@@ -203,17 +205,23 @@ function SignupForm(props) {
             </Form>
         </CardBody>}
 </Card>
+</>
 );
 
 if(initialState.customer_or_service_provider=="false"){
     return(
+        <>
+        <Jumbotron className="demo-bg" style={{backgroundSize:"70%",paddingTop:"10%",paddingBottom:"11%",backgroundRepeat:"no-repeat",backgroundPosition:"right"}}>
+                <h1 className="lead"  style={{fontSize:"280%",fontWeight:"bolder"}}>FILL INFORMATION</h1>
+
+</Jumbotron>
         <div className="row container-fluid">
             <div className="col-7"> 
             {base}
             </div>
             <div className="col-5" >
             <Card className=" mt-5 mb-5 ">
-                    <CardHeader className="color mt-3 d-flex justify-content-start ml-3 mr-3 " ><h4 className=" mt-2 ">Customer Information</h4></CardHeader>
+                    <CardHeader className="color mt-3 d-flex justify-content-start ml-3 mr-3 " ><h4 className=" mt-2 " style={{fontSize:"100%"}}>Customer Information</h4></CardHeader>
 
                     {
                         <CardBody>
@@ -265,18 +273,24 @@ if(initialState.customer_or_service_provider=="false"){
             </div>
 
         </div>
+        </>
     );
 }
 
 else if(initialState.customer_or_service_provider=="true"){
     return(
+        <>
+        <Jumbotron className="demo-bg" style={{backgroundSize:"70%",paddingTop:"10%",paddingBottom:"11%",backgroundRepeat:"no-repeat",backgroundPosition:"right"}}>
+                <h1 className="lead"  style={{fontSize:"280%",fontWeight:"bolder"}}>FILL INFORMATION</h1>
+
+</Jumbotron>
         <div className="row container-fluid">
             <div className="col-7"> 
             {base}
             </div>
             <div className="col-5" >
             <Card className=" mt-5 mb-5 ">
-                    <CardHeader className="color mt-3 d-flex justify-content-start ml-3 mr-3 " ><h4 className=" mt-2 ">Service Provider Information</h4></CardHeader>
+                    <CardHeader className="color mt-3 d-flex justify-content-start ml-3 mr-3 "  ><h4 className=" mt-2 " style={{fontSize:"100%"}}>Service Provider Information</h4></CardHeader>
 
                     {
                         <CardBody>
@@ -352,11 +366,16 @@ else if(initialState.customer_or_service_provider=="true"){
             </div>
 
         </div>
+        </>
     );
 }
 
         return (
             <>
+            <Jumbotron style={{backgroundImage:`url(https://ps.w.org/ultimate-member/assets/banner-772x250.png?rev=2143172)`,backgroundSize:"70%",paddingTop:"10%",paddingBottom:"11%",backgroundRepeat:"no-repeat",backgroundPosition:"right"}}>
+                <h1 style={{fontSize:"300%"}}>SignUp</h1>
+
+</Jumbotron>
             <div className="row container-fluid">
                 <div className="col-md-3 offset-1 mt-5 mb-5">
                     <img style={{height:"100%"}} src="./images/register1.png" alt="" />

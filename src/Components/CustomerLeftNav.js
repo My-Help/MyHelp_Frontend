@@ -22,20 +22,28 @@ export default class CustomerLeftNav extends Component {
     return (
       <div className="leftNav container-fluid">
         <Navbar light expand="md" className="me" >
-          <NavbarToggler onClick={this.toggleNav} />
+          <NavbarToggler style={{backgroundColor:"white"}} onClick={this.toggleNav} />
           <Collapse isOpen={this.state.isNavOpen} navbar >
             <Nav navbar className="flex-column">
               <NavItem>
                 <Link className="nav-link" to="/Customer/Profile">
-                  Profile
+                  <span className="navcol">
+                  <i class="fa fa-user" aria-hidden="true"></i> Profile
+                  </span>
                 </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/Customer/Bookings">Your Bookings
+                <Link className="nav-link" to="/Customer/Bookings">
+                <span className="navcol">
+                <i class="far fa-file-alt"></i> Your Bookings
+                  </span>
                 </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/Customer/services">Services
+                <Link className="nav-link" to="/Customer/services">
+                <span className="navcol">
+                <i class="fab fa-servicestack"></i> Services
+                  </span>
                 </Link>
               </NavItem>
             </Nav>
