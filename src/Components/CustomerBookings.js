@@ -35,7 +35,6 @@ export default function CustomerBookings({ bookings }) {
     rows: bookings,
 
   });
-  console.log(bookings)
     return (
       <div>
         <div className="row">

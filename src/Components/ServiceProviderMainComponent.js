@@ -27,7 +27,6 @@ class ServiceProviderMainComponent extends Component{
         if (sp_booking!=null){
             sp_booking.forEach(element=>{
                 let customer = this.props.customers.customers.filter((ele)=>ele.Customer_Username===element.Customers_Username)[0]
-                console.log(customer)
                 booking.push({
                     Customers_Username:element.Customers_Username,
                     DateTime:element.DateTime,
@@ -53,7 +52,6 @@ class ServiceProviderMainComponent extends Component{
 
 
     render(){
-        console.log(this.props)
         return(
         <>
             <Header/>

@@ -98,7 +98,6 @@ class Main extends Component{
                     }} />
             )} />
         );
-        console.log(this.props)
         return(
             
             <div>

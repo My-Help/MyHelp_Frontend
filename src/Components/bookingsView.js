@@ -48,7 +48,7 @@ export default function BookingView({ bookings }) {
     rows: bookings,
 
   });
-  console.log(bookings)
+
     return (
       <div>
         <div className="row">
