@@ -9,7 +9,7 @@ class Services extends Component{
         <div className="container-fluid mb-4">
             <div className="row">
                 <div className="col-12">
-                    <h4 className="d-flex justify-content-center"> Services We Provide </h4>
+                    <h4 className="d-flex justify-content-center"> Book Your Service </h4>
                     <hr className="hr_reduced"/>
                 </div>
             </div>
