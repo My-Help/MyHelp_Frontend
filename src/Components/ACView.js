@@ -17,12 +17,6 @@ export default function ACView({ acrepairs }) {
       },
       
       {
-        label: 'Mobile',
-        field: 'MobileNo',
-        sort: 'disabled',
-        width: 100,
-      },
-      {
         label: 'AveragePrice',
         field: 'Price',
 
@@ -61,7 +55,7 @@ export default function ACView({ acrepairs }) {
         <div>
           <MDBDataTableV5
             hover
-            responsiveMd
+            
             bordered
             entriesOptions={[5, 20, 25]}
             entries={5}

@@ -6,7 +6,7 @@ class Header extends Component{
         return(
             <Jumbotron style={{backgroundImage:`url(https://gust-production.s3.amazonaws.com/uploads/startup/panoramic_image/911706/jumbotron-bg.png)`,backgroundPosition:"center",backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
                 <div className="row">
-                    <div className="conatiner-fluid col-sm-7 " style={{backgroundColor:'#14274e',color:'white',opacity:0.7,marginLeft:"6%"}}>
+                    <div className="conatiner-fluid col-sm-7 " style={{color:"white", backgroundColor:"rgba(20, 39, 78, 0.8)",marginLeft:"6%"}}>
                         <h1 className="container-fluid" style={{paddingTop:"2%"}}>My Help</h1>
                         <hr color="white" className="w-60" />
                         <p className="container-fluid d-flex justify-content-center">
