@@ -28,7 +28,7 @@ now
 
 ## Screenshots
 
-![Home Page](https://github.com/My-Help/MyHelp_Frontend/blob/master/public/images/screencapture-localhost-3001-home-2021-05-05-14_16_49.png)
+![Home Page](https://github.com/My-Help/MyHelp_Frontend/blob/master/public/images/homepage.png)
 
 ## Tech/Framework used
 
