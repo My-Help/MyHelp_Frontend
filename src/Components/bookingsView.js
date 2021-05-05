@@ -48,7 +48,7 @@ export default function BookingView({ bookings }) {
     rows: bookings,
 
   });
-  console.log(bookings)
+
     return (
       <div>
         <div className="row">
@@ -60,7 +60,6 @@ export default function BookingView({ bookings }) {
         <div>
           <MDBDataTableV5
             hover
-            responsiveMd
             bordered
             entriesOptions={[5, 20, 25]}
             entries={5}

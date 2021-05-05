@@ -10,7 +10,7 @@ class CustomerProfile extends Component {
         if (this.props.customer != null) {
             Customer = this.props.customer
         }
-        console.log(this.props)
+        
         return (
 
             <div className="container-fluid">

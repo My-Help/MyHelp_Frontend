@@ -35,7 +35,6 @@ export default function CustomerBookings({ bookings }) {
     rows: bookings,
 
   });
-  console.log(bookings)
     return (
       <div>
         <div className="row">
@@ -47,7 +46,7 @@ export default function CustomerBookings({ bookings }) {
         <div>
           <MDBDataTableV5
             hover
-            responsiveMd
+            
             bordered
             entriesOptions={[5, 20, 25]}
             entries={5}

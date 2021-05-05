@@ -32,7 +32,7 @@ function SignupForm(props) {
 
 
     const handleSubmitClick = (event) => {
-        console.log(initialState);
+       
 
         let customer_or_service_provider=false
         if (initialState.customer_or_service_provider=="true"){
@@ -70,7 +70,7 @@ function SignupForm(props) {
             .then(response => response.json())
             .then(response => { alert("Registeration Successfully!!");})
             .catch(error => {
-                console.log('Registeration ', error.message);
+               
                 alert(' Could not be Registered\nError: ' + error.message);
             })
 
@@ -99,7 +99,7 @@ function SignupForm(props) {
                     Occupation:initialState.Occupation,
                     Description:initialState.Description,
                 }
-                console.log(newServiceProvider)
+                
                 props.postServiceProvider(newServiceProvider);
             }
             event.preventDefault();

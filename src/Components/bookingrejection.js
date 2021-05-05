@@ -67,7 +67,6 @@ export default function BookingRejection({ bookings }) {
         <div>
           <MDBDataTableV5
             hover
-            responsiveMd
             bordered
             entriesOptions={[5, 20, 25]}
             entries={5}
