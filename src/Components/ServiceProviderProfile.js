@@ -152,27 +152,24 @@ class ServiceProviderProfile extends Component {
                 
 
                 <div className="row">
-                    <div className="col-12 container-fluid mt-2">
-                        <h2 className="feature-heading container-fluid">FeedBack</h2>
+                    <div className="col-12 container-fluid mt-4">
+                        <h2 className="feature-heading container-fluid">FeedBacks</h2>
                         <hr className="feature-line" />
                     </div>
                 </div>
 
-                <div className="row list-unstyled">
                     {this.state.Feedback.map((feed)=>{
                         return(
-                            <ul>
-                                <li >
-                                <div className="row mb-2 mt-2" >
-                                    <div className="col-sm-12">
-                                        <p><strong>{feed.Description}</strong> -{feed.Customers_Username}</p>
-                                    </div>    
+                            
+                            <div className="row col-sm-10 media container-fluid mb-2 mt-2 ">
+                                <img className="align-self-start" src="https://www.blogtyrant.com/wp-content/uploads/2013/01/how-to-get-more-blog-comments.jpg" height="50in"/>
+                                <div className="media-body border">
+                                    <h5 className="mb-0 container-fluid">{feed.Customers_Username}</h5>
+                                    <div className="container-fluid">{feed.Description}</div>
+                                </div>
                             </div>
-                                </li>
-                            </ul>
                         );
                     })}
-                </div>
                 
             </div>
         )
