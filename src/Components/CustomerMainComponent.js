@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect,Link } from 'react-router-dom';
 
 import Header from './Header';
 import Home from './Home';
@@ -18,6 +18,9 @@ import CustomerCarpenter from './CustomerCarpenter';
 import CustomerBarber from './CustomerBarber';
 import CustomerBookings from './CustomerBookings';
 import ServiceProviderProfile  from './ServiceProviderProfile';
+import CustomerBookedServices from './CustomerBookedServices';
+
+import CustomerUpdateProfile from './CustomerUpdateProfile';
 const vader = require('vader-sentiment');
 
 
@@ -34,13 +37,18 @@ class CustomerMainComponent extends Component{
             Electricians:[],
             customer:{},
             bookings:[],
+            completed_booking:[]
         }
     }
 
     componentDidMount(){
        let customer=this.props.customers.customers.filter((customer)=>customer.Customer_Username===this.props.auth.user.username)[0]
        
-       let serviceProviders_by_city = this.props.serviceProviders.serviceproviders.filter((sp)=>sp.City === customer.City)
+       let serviceProviders_by_city = this.props.serviceProviders.serviceproviders.filter((sp)=>{
+           if(typeof customer !== 'undefined'){
+              return sp.City===customer.City
+           }
+       })
 
        let serviceProviders_by_city_added_feedbacks=[]
        if(serviceProviders_by_city!=null){
@@ -92,10 +100,56 @@ class CustomerMainComponent extends Component{
        let acServiceRepair_by_city = serviceProviders_by_city_added_feedbacks.filter((acServiceRepair)=>acServiceRepair.Occupation==="AC Service/Repair")
        const acServiceRepair_list = this.state.ACServiceRepair.concat(acServiceRepair_by_city)
 
-       let ct_booking = this.props.bookings.bookings.filter((ct)=>ct.Customers_Username===this.props.auth.user.username)
-       const ctbooking_list = this.state.bookings.concat(ct_booking)
+       let booking=[]
+       let ct_booking = this.props.bookings.bookings.filter((ct)=>(ct.Customers_Username===this.props.auth.user.username))
+       ct_booking = ct_booking.filter((booking)=>booking.Completed===false)
+       if (ct_booking!=null){
+        ct_booking.forEach(element=>{
+            booking.push({
+                id:element._id,
+                ServiceProviders_Username:element.ServiceProviders_Username,
+                DateTime:element.DateTime,
+                ProblemDescription:element.ProblemDescription,
+                TimeSlot:element.TimeSlot,
+                Action:<div>
+                <i className="fa fa-check-circle resolve mr-2" onClick={()=>{
+                    if(element.Feedback===false){
+                        alert("Please Provide Feedback")
+                    }
+                    else if(window.confirm("Are you sure Your Booked Service is Completed")){
+                        let booking_update={
+                            id:element._id,
+                            Customers_Username:element.Customers_Username,
+                            ServiceProviders_Username:element.ServiceProviders_Username,
+                            DateTime:element.DateTime,
+                            ProblemDescription:element.ProblemDescription,
+                            TimeSlot:element.TimeSlot,
+                            Completed:true
+                        }
+                        this.props.updateBooking(booking_update)
+                    }
+                }} ></i>
+                
+                    <Link to={`/Customer/Feedback/${element._id}`}>
+                    <i class="fas feed mr-2 fa-clipboard-list">
+                    </i>
+                    </Link>
+           
+                <i className="fa fa-trash-alt delete" onClick={() => {
+                if (window.confirm("Are you sure you want to delete ?"))
+                    this.props.deletebooking(element._id)
+                }}></i>
+              </div>
+            })
+        });
+    }
 
+
+       const ctbooking_list = this.state.bookings.concat(booking)
        
+       let completed_bookings = this.props.bookings.bookings.filter((ct)=>(ct.Customers_Username===this.props.auth.user.username))
+
+       completed_bookings=completed_bookings.filter((el)=>el.Completed===true)
 
        this.setState({
            customer:customer,
@@ -105,7 +159,8 @@ class CustomerMainComponent extends Component{
            Electricians:electricians_list,
            ApplianceRepair:applianceRepair_list,
            ACServiceRepair:acServiceRepair_list,
-           bookings:ctbooking_list
+           bookings:ctbooking_list,
+           completed_booking:completed_bookings
        });
 
     }
@@ -120,7 +175,7 @@ class CustomerMainComponent extends Component{
 
         const Feedback =({match})=>{
             return(
-                <FeedbackForm Service_provider_username={match.params.username} Customer_username={this.state.customer.Customer_Username} postFeedBack ={this.props.postFeedBack}/>
+                <FeedbackForm booking_details={this.state.bookings.filter((el)=>el.id===match.params.username)[0]} Customer_username={this.state.customer.Customer_Username} postFeedBack ={this.props.postFeedBack} updateBooking={this.props.updateBooking}/>
             );
         }
 
@@ -141,6 +196,7 @@ class CustomerMainComponent extends Component{
                 <div className="col-md-9">
                     <Switch>
                         <Route path="/Customer/Profile" component={()=><CustomerProfile customer={this.state.customer} />}/>
+                        <Route path="/Customer/UpdateProfile" component={()=><CustomerUpdateProfile customer={this.state.customer} updateCustomerInfo ={this.props.updateCustomerInfo}/>}  />
                         <Route path="/Customer/services" component={()=><Services/>} />
                         <Route path="/Customer/Plumbers" component={()=><CustomerPlumbers plumbers={this.state.Plumbers.sort((a,b)=>b.Feedback_count-a.Feedback_count)}/>}/>
                         <Route path="/Customer/AC ServiceRepair" component={()=><CustomerAC ACServiceRepair={this.state.ACServiceRepair.sort((a,b)=>b.Feedback_count-a.Feedback_count)}/>}/>
@@ -151,6 +207,7 @@ class CustomerMainComponent extends Component{
                         <Route path = "/Customer/Booking/:username" component={Booking}/>
                         <Route path = "/Customer/Feedback/:username" component={Feedback}/>
                         <Route path ="/Customer/Bookings" component={()=><CustomerBookings bookings = {this.state.bookings}/>}/>
+                        <Route path="/Customer/AvailServices" component={()=><CustomerBookedServices bookings={this.state.completed_booking}/>}/>
                         <Route path="/Customer/:username" component={ServiceProviderProfil}/>
                         <Redirect to="/home" component={()=><Home />} />
                     </Switch>

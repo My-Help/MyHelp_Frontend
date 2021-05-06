@@ -8,6 +8,8 @@ import Home from './Home';
 import BookingView from './bookingsView';
 import BookingRejection from './bookingrejection';
 
+import ServiceProviderUpdateProfile from './ServiceProviderUpdateProfile';
+
 class ServiceProviderMainComponent extends Component{
 
     constructor(props){
@@ -16,6 +18,7 @@ class ServiceProviderMainComponent extends Component{
             bookings:[
 
             ],
+            completed_booking:[]
 
         }
     }
@@ -34,6 +37,8 @@ class ServiceProviderMainComponent extends Component{
                     TimeSlot:element.TimeSlot,
                     mobileNo:customer.mobileNo,
                     Address:customer.Address,
+                    Completed:element.Completed,
+                    Feedback:element.Feedback,
                     Action:<div>
                     <i className="fa fa-trash-alt delete" onClick={() => {
                     if (window.confirm("Are u sure u want to delete ?"))
@@ -44,8 +49,12 @@ class ServiceProviderMainComponent extends Component{
             });
         }
 
+        let completedbookings = booking.filter((sp)=>sp.Completed===true)
+        let pendingbooking = booking.filter((sp)=>sp.Completed===false)
+
         this.setState({
-            bookings:booking
+            bookings:pendingbooking,
+            completed_booking:completedbookings
         })
     }
 
@@ -63,7 +72,8 @@ class ServiceProviderMainComponent extends Component{
                 <div className="col-md-9">
                     <Switch>
                         <Route path="/ServiceProvider/Profile" component={()=><ServiceProviderProfile serviceProvider = {this.props.serviceProviders.serviceproviders.filter((sc)=>sc.ServiceProvider_Username===this.props.auth.user.username)[0]} feedbacks = {this.props.feedbacks.feedbacks.filter((fb)=>fb.ServiceProvider_Username===this.props.auth.user.username)}/>}/>
-                        <Route path="/ServiceProvider/Bookings" component={()=><BookingView bookings = {this.state.bookings}/>}/>
+                        <Route path='/ServiceProvider/UpdateProfile' component={()=><ServiceProviderUpdateProfile updateServiceProviderInfo={this.props.updateServiceProviderInfo} serviceProvider = {this.props.serviceProviders.serviceproviders.filter((sc)=>sc.ServiceProvider_Username===this.props.auth.user.username)[0]}/>}/>
+                        <Route path="/ServiceProvider/Bookings" component={()=><BookingView bookings = {this.state.completed_booking}/>}/>
                         <Route path="/ServiceProvider/Bookings Rejection" component = {()=><BookingRejection bookings={this.state.bookings}/>}/>
                         <Redirect to="/home" component={()=><Home />} />
                     </Switch>

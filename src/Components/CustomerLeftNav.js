@@ -39,10 +39,26 @@ export default class CustomerLeftNav extends Component {
                   </span>
                 </Link>
               </NavItem>
+
+              <NavItem>
+                <Link className="nav-link" to="/Customer/AvailServices">
+                <span className="navcol">
+                <i class="fab fa-resolving"></i> AvailServices
+                  </span>
+                </Link>
+              </NavItem>
+              
               <NavItem>
                 <Link className="nav-link" to="/Customer/services">
                 <span className="navcol">
                 <i class="fab fa-servicestack"></i> Services
+                  </span>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link className="nav-link" to="/Customer/UpdateProfile">
+                <span className="navcol">
+                <i class="fas fa-edit"></i> UpdateProfile
                   </span>
                 </Link>
               </NavItem>

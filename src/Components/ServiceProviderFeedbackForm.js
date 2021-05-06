@@ -7,13 +7,20 @@ class FeedbackForm extends Component {
         this.state = {
             ServiceProvider_Username:"",
             Customer_Username:"",
-            Description:''
+            Description:'',
+            updatedbooking:{}
             }
         }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.postFeedBack(this.state)
+        let feedback={
+            ServiceProvider_Username:this.state.ServiceProvider_Username,
+            Customer_Username:this.state.Customer_Username,
+            Description:this.state.Description
+        }
+        this.props.postFeedBack(feedback);
+        this.props.updateBooking(this.state.updatedbooking)
 
     }
     handleInputChange = (event) => {
@@ -27,13 +34,32 @@ class FeedbackForm extends Component {
     }
 
     componentDidMount(){
-        this.setState({
-            ServiceProvider_Username:this.props.Service_provider_username,
-            Customer_Username:this.props.Customer_username
-        });
+        console.log(this.props)
+        if(typeof this.props.booking_details !== 'undefined'){
+
+            let updated_booking={
+                id:this.props.booking_details.id,
+                Customers_Username:this.props.Customer_username,
+                ServiceProviders_Username:this.props.booking_details.ServiceProviders_Username,
+                DateTime:this.props.booking_details.DateTime,
+                ProblemDescription:this.props.booking_details.ProblemDescription,
+                TimeSlot:this.props.booking_details.TimeSlot,
+                Completed:false,
+                Feedback:true
+            }
+
+            this.setState({
+                ServiceProvider_Username:this.props.booking_details.ServiceProviders_Username,
+                Customer_Username:this.props.Customer_username,
+                updatedbooking:updated_booking
+            });
+
+        }
+        
     }
     
     render() {
+        console.log(this.state)
         return (
             <div>
                 <div className="row">

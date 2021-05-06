@@ -92,6 +92,50 @@ export const fetchCustomers = () => (dispatch) => {
         .catch(error => dispatch(customerFailed(error.message)));
 }
 
+export const updateCustomerInfo = (customer) => (dispatch) => {
+    const newCustomer = {
+        Customer_Username:customer.Username,
+        Name:customer.Name,
+        mobileNo:customer.MobileNo,
+        Gender:customer.Gender,
+        City:customer.City,
+        Address:customer.Address,
+        email:customer.Email
+    }
+    console.log('newCustomer: ', newCustomer);
+
+    const bearer = 'Bearer ' + localStorage.getItem('token');
+
+    return fetch(baseUrl + 'customers/' + customer.id, {
+        method: 'PUT',
+        body: JSON.stringify(newCustomer),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': bearer
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                return response;
+            }
+            else {
+                var error = new Error('Error' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(response => response.json())
+        .then(response => { alert("Customer Info Updated!"); dispatch(fetchCustomers()); })
+        .catch(error => {
+            console.log('Update CustomerInfo ', error.message);
+            alert('Customer could not be updated\nError: ' + error.message);
+        })
+}
+
 
 //Servie_Provider
 export const serviceProviderLoading = () => ({
@@ -188,6 +232,52 @@ export const fetchServiceProviders = () => (dispatch) => {
         .catch(error => dispatch(serviceProviderFailed(error.message)));
 }
 
+export const updateServiceProviderInfo = (serviceProvider) => (dispatch) => {
+    const newServiceProvider = {
+        ServiceProvider_Username:serviceProvider.Username,
+        Name:serviceProvider.Name,
+        MobileNo:serviceProvider.MobileNo,
+        Price:serviceProvider.Price,
+        Gender:serviceProvider.Gender,
+        City:serviceProvider.City,
+        email:serviceProvider.Email,
+        Occupation:serviceProvider.Occupation,
+        Description:serviceProvider.Description,
+    }
+    console.log('newServiceProvider: ', newServiceProvider);
+
+    const bearer = 'Bearer ' + localStorage.getItem('token');
+
+    return fetch(baseUrl + 'serviceProviders/' + serviceProvider.id, {
+        method: 'PUT',
+        body: JSON.stringify(newServiceProvider),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': bearer
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                return response;
+            }
+            else {
+                var error = new Error('Error' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(response => response.json())
+        .then(response => { alert("Service Provider Info Updated!"); dispatch(fetchServiceProviders()); })
+        .catch(error => {
+            console.log('Update Service Provider Info ', error.message);
+            alert('Service Provider could not be updated\nError: ' + error.message);
+        })
+}
+
 //Booking
 export const bookingLoading = () => ({
     type: ActionTypes.Booking_LOADING
@@ -280,6 +370,56 @@ export const fetchbookings = () => (dispatch) => {
         .then(serviceProviders => dispatch(bookingSuccess(serviceProviders)))
         .catch(error => dispatch(bookingFailed(error.message)));
 }
+
+export const updateBooking = (booking) => (dispatch) => {
+    const newBooking = {
+        Customers_Username:booking.Customer_Username,
+        ServiceProviders_Username:booking.ServiceProvider_Username,
+        DateTime:booking.Date,
+        TimeSlot:booking.Time,
+        ProblemDescription:booking.Description,
+        Completed:booking.Completed,
+        Feedback:booking.Feedback
+    }
+    console.log('newBooking: ', newBooking);
+
+    const bearer = 'Bearer ' + localStorage.getItem('token');
+
+    return fetch(baseUrl + 'booking/' + booking.id, {
+        method: 'PUT',
+        body: JSON.stringify(newBooking),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': bearer
+        }
+    })
+        .then(response => {
+            if (response.ok) {
+                return response;
+            }
+            else {
+                var error = new Error('Error' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+        .then(response => response.json())
+        .then(response => { 
+            if(booking.Completed===true){
+                alert("Booked Service Completed!"); 
+            }
+            dispatch(fetchbookings());
+             })
+        .catch(error => {
+            console.log('Update Booking Info ', error.message);
+            alert('Booked Service could not be updated\nError: ' + error.message);
+        })
+}
+
 
 export const deletebooking = (bookingId) => (dispatch) => {
     const bearer = 'Bearer ' + localStorage.getItem('token');

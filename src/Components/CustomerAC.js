@@ -21,7 +21,7 @@ class CustomerAC extends Component{
             <div className="container-fluid row mb-5">
             {this.props.ACServiceRepair.map((ac)=>{
                 return(
-                        <div className="col-6 mt-3">
+                        <div className="col-md-6 mt-3">
                             <div className="card">
                             <Link to={`/Customer/${ac.ServiceProvider_Username}`}>
                                 <div className="card-header color" style={{fontWeight:'bold'},{fontSize:"20px"}}>
@@ -56,16 +56,12 @@ class CustomerAC extends Component{
                                         </h5>
                                     </div>
                                     <div className="row">
-                                        <div className="col-sm-6">
+                                        <div className="col-sm-12">
                                             <Link to={`/Customer/Booking/${ac.ServiceProvider_Username}`}>
                                                 <button className="btn btn-primary btn-md btn-block mt-2 color"  >Book Service</button>
                                             </Link>
                                         </div>
-                                        <div className="col-sm-6">
-                                            <Link to={`/Customer/Feedback/${ac.ServiceProvider_Username}`}>
-                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  >Feedback</button>
-                                            </Link>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
