@@ -55,14 +55,9 @@ class CustomerPlumbers extends Component{
                                         </h5>
                                     </div>
                                     <div className="row">
-                                        <div className="col-md-6">
+                                        <div className="col-sm-12">
                                             <Link to={`/Customer/Booking/${plumber.ServiceProvider_Username}`}>
                                                 <button className="btn btn-primary btn-md btn-block mt-2 color"  >Book Service</button>
-                                            </Link>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <Link to={`/Customer/Feedback/${plumber.ServiceProvider_Username}`}>
-                                                <button className="btn btn-primary btn-md btn-block mt-2 color"  >Feedback</button>
                                             </Link>
                                         </div>
                                     </div>
