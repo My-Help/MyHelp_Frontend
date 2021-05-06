@@ -88,3 +88,30 @@
 .boxsh{
   box-shadow:0px 5px 25px rgba(0, 0, 0, 0.2);
 }
+
+.resolve{
+  float: left;
+  background-color: rgb(236, 158, 13);
+  border-radius: 75%;
+  border: 2x solid #094372;
+  padding: 10px 10px;
+  color: white;
+}
+.resolve:hover {
+  cursor: pointer;
+  color: #eaeff3;
+}
+
+.feed{
+  float: left;
+  background-color:rgb(5, 128, 5);
+  border-radius: 75%;
+  border: 2x solid #094372;
+  padding: 10px 10px;
+  color: white;
+}
+
+.feed:hover{
+  cursor: pointer;
+  color: #eaeff3;
+}

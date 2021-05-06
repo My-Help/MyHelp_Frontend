@@ -21,7 +21,7 @@ import { connect } from 'react-redux';
 
 
 import {
-    postCustomer,postBooking,postFeedback,postServiceProvider,fetchCustomers,fetchServiceProviders,fetchbookings,fetchfeedbacks,loginUser,logoutUser,deletebooking
+    postCustomer,postBooking,postFeedback,postServiceProvider,fetchCustomers,fetchServiceProviders,fetchbookings,fetchfeedbacks,loginUser,logoutUser,deletebooking,updateCustomerInfo,updateServiceProviderInfo,updateBooking
 } from '../redux/ActionCreators';
 
 const mapDispatchToProps = (dispatch) => ({
@@ -36,6 +36,10 @@ const mapDispatchToProps = (dispatch) => ({
     fetchfeedbacks: () => dispatch(fetchfeedbacks()),
     
     deletebooking: (bookingId) => dispatch(deletebooking(bookingId)),
+
+    updateCustomerInfo: (customer) => dispatch(updateCustomerInfo(customer)),
+    updateServiceProviderInfo:(serviceProvider)=>dispatch(updateServiceProviderInfo(serviceProvider)),
+    updateBooking:(booking)=>dispatch(updateBooking(booking)),
 
     loginUser: (creds) => dispatch(loginUser(creds)),
     logoutUser: () => dispatch(logoutUser()),
@@ -105,8 +109,8 @@ class Main extends Component{
             <Switch>
                 <Route path="/home" component={() => <Home />} />
                 <Route path="/Login" component={() => <LoginForm auth={this.props.auth} loginUser={this.props.loginUser} />} />
-                <ServiceProviderRoute path='/ServiceProvider' component = {()=><ServiceProviderMainComponent customers = {this.props.customers} bookings={this.props.bookings} feedbacks={this.props.feedbacks} serviceProviders = {this.props.serviceProviders} auth={this.props.auth} deletebooking={this.props.deletebooking} />}/>
-                <CustomerRoute path='/Customer' component = {()=><CustomerMainComponent customers = {this.props.customers} feedbacks={this.props.feedbacks} serviceProviders = {this.props.serviceProviders} bookings={this.props.bookings} auth={this.props.auth} postBooking = {this.props.postBooking} postFeedBack = {this.props.postFeedback} />}/>
+                <ServiceProviderRoute path='/ServiceProvider' component = {()=><ServiceProviderMainComponent customers = {this.props.customers} bookings={this.props.bookings} feedbacks={this.props.feedbacks} serviceProviders = {this.props.serviceProviders} auth={this.props.auth} deletebooking={this.props.deletebooking} updateServiceProviderInfo={this.props.updateServiceProviderInfo} />}/>
+                <CustomerRoute path='/Customer' component = {()=><CustomerMainComponent customers = {this.props.customers} feedbacks={this.props.feedbacks} serviceProviders = {this.props.serviceProviders} bookings={this.props.bookings} auth={this.props.auth} postBooking = {this.props.postBooking} postFeedBack = {this.props.postFeedback} updateCustomerInfo ={this.props.updateCustomerInfo} deletebooking={this.props.deletebooking} updateBooking={this.props.updateBooking} />}/>
                 <Route path="/register" component={()=><SignupForm postCustomer= {this.props.postCustomer} postServiceProvider={this.props.postServiceProvider}/>}/>
                 <Route path="/contactus" component={()=><Contact/>}/>
                 <Route path="/aboutus" component = {()=><AboutUs/>}/>

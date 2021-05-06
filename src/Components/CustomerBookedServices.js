@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBDataTableV5 } from 'mdbreact';
-export default function CustomerBookings({ bookings }) {
+export default function CustomerBookedServices({ bookings }) {
 
   const [datatable] = React.useState({
 
@@ -30,15 +30,7 @@ export default function CustomerBookings({ bookings }) {
         field: 'ProblemDescription',
 
         width: 200,
-      },
-      {label: 'Actions',
-      field: 'Action',
-      default: <div>
-        <i className="fa fa-check-circle resolve mr-2"></i>
-        <i class="fas mr-2 feed fa-clipboard-list"></i>
-        <i className="fa fa-trash-alt delete"></i>
-      </div>,
-      width: 100,}
+      }
     ],
     rows: bookings,
 
