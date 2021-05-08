@@ -71,7 +71,7 @@ class ServiceProviderMainComponent extends Component{
                 </div>
                 <div className="col-md-9">
                     <Switch>
-                        <Route path="/ServiceProvider/Profile" component={()=><ServiceProviderProfile serviceProvider = {this.props.serviceProviders.serviceproviders.filter((sc)=>sc.ServiceProvider_Username===this.props.auth.user.username)[0]} feedbacks = {this.props.feedbacks.feedbacks.filter((fb)=>fb.ServiceProvider_Username===this.props.auth.user.username)}/>}/>
+                        <Route path="/ServiceProvider/Profile" component={()=><ServiceProviderProfile serviceProvider = {this.props.serviceProviders.serviceproviders.filter((sc)=>sc.ServiceProvider_Username===this.props.auth.user.username)[0]} isLoading={this.props.serviceProviders.isLoading} feedbacks = {this.props.feedbacks.feedbacks.filter((fb)=>fb.ServiceProvider_Username===this.props.auth.user.username)}/>}/>
                         <Route path='/ServiceProvider/UpdateProfile' component={()=><ServiceProviderUpdateProfile updateServiceProviderInfo={this.props.updateServiceProviderInfo} serviceProvider = {this.props.serviceProviders.serviceproviders.filter((sc)=>sc.ServiceProvider_Username===this.props.auth.user.username)[0]}/>}/>
                         <Route path="/ServiceProvider/Bookings" component={()=><BookingView bookings = {this.state.completed_booking}/>}/>
                         <Route path="/ServiceProvider/Bookings Rejection" component = {()=><BookingRejection bookings={this.state.bookings}/>}/>
