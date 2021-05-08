@@ -53,7 +53,7 @@ export default function BookingView({ bookings }) {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 container-fluid">
-            <h2 className="feature-heading ">Bookings</h2>
+            <h2 className="feature-heading ">Bookings Completed</h2>
             <hr className="feature-line" />
           </div>
         </div>

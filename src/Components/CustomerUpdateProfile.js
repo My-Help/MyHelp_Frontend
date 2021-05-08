@@ -153,7 +153,7 @@ class CustomerUpdateProfile extends Component {
                         </Col>
                     </Row>
                     
-                    <Button type="submit"  style={{backgroundColor:"#14274e",marginLeft:"30px"}}>
+                    <Button type="submit" className="mb-2" style={{backgroundColor:"#14274e",marginLeft:"30px"}}>
                         Update
                     </Button>
                 </Form>
