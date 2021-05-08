@@ -34,7 +34,6 @@ class FeedbackForm extends Component {
     }
 
     componentDidMount(){
-        console.log(this.props)
         if(typeof this.props.booking_details !== 'undefined'){
 
             let updated_booking={
@@ -59,7 +58,6 @@ class FeedbackForm extends Component {
     }
     
     render() {
-        console.log(this.state)
         return (
             <div>
                 <div className="row">

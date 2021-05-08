@@ -31,7 +31,6 @@ export const postCustomer = (customer) => (dispatch) => {
         Address:customer.Address,
         email:customer.Email
     }
-    console.log('Customer: ', newCustomer);
 
     fetch(baseUrl + 'customers', {
         method: 'POST',
@@ -57,7 +56,6 @@ export const postCustomer = (customer) => (dispatch) => {
         .then(response => response.json())
         .then(response => { alert("Customer Info added Successfully!!");})
         .catch(error => {
-            console.log('Post Customer ', error.message);
             alert('Customer Info could not be added\nError: ' + error.message);
         })
 }
@@ -102,7 +100,6 @@ export const updateCustomerInfo = (customer) => (dispatch) => {
         Address:customer.Address,
         email:customer.Email
     }
-    console.log('newCustomer: ', newCustomer);
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
@@ -131,7 +128,6 @@ export const updateCustomerInfo = (customer) => (dispatch) => {
         .then(response => response.json())
         .then(response => { alert("Customer Info Updated!"); dispatch(fetchCustomers()); })
         .catch(error => {
-            console.log('Update CustomerInfo ', error.message);
             alert('Customer could not be updated\nError: ' + error.message);
         })
 }
@@ -170,8 +166,6 @@ export const postServiceProvider = (serviceProvider) => (dispatch) => {
         Occupation:serviceProvider.Occupation,
         Description:serviceProvider.Description,
     }
-    console.log(newServiceProvider)
-    console.log('ServiceProvider: ', newServiceProvider);
 
     return fetch(baseUrl + 'serviceProviders', {
         method: 'POST',
@@ -197,7 +191,6 @@ export const postServiceProvider = (serviceProvider) => (dispatch) => {
         .then(response => response.json())
         .then(response => { alert("ServiceProvider Info added Successfully!!"); dispatch(addServiceProvider(response)); dispatch(fetchServiceProviders()); })
         .catch(error => {
-            console.log('Post Service ', error.message);
             alert('ServiceProvider Info could not be added\nError: ' + error.message);
         })
 }
@@ -244,7 +237,6 @@ export const updateServiceProviderInfo = (serviceProvider) => (dispatch) => {
         Occupation:serviceProvider.Occupation,
         Description:serviceProvider.Description,
     }
-    console.log('newServiceProvider: ', newServiceProvider);
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
@@ -273,7 +265,6 @@ export const updateServiceProviderInfo = (serviceProvider) => (dispatch) => {
         .then(response => response.json())
         .then(response => { alert("Service Provider Info Updated!"); dispatch(fetchServiceProviders()); })
         .catch(error => {
-            console.log('Update Service Provider Info ', error.message);
             alert('Service Provider could not be updated\nError: ' + error.message);
         })
 }
@@ -307,7 +298,6 @@ export const postBooking = (booking) => (dispatch) => {
         TimeSlot:booking.Time,
         ProblemDescription:booking.Description
     }
-    console.log('Booking: ', newBooking);
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
@@ -336,7 +326,6 @@ export const postBooking = (booking) => (dispatch) => {
         .then(response => response.json())
         .then(response => { alert("Booking Successfully!!"); dispatch(addbooking(response)); dispatch(fetchbookings()); })
         .catch(error => {
-            console.log('Booking ', error.message);
             alert('Booking could not be added\nError: ' + error.message);
         })
 }
@@ -381,7 +370,6 @@ export const updateBooking = (booking) => (dispatch) => {
         Completed:booking.Completed,
         Feedback:booking.Feedback
     }
-    console.log('newBooking: ', newBooking);
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
@@ -415,7 +403,6 @@ export const updateBooking = (booking) => (dispatch) => {
             dispatch(fetchbookings());
              })
         .catch(error => {
-            console.log('Update Booking Info ', error.message);
             alert('Booked Service could not be updated\nError: ' + error.message);
         })
 }
@@ -443,7 +430,7 @@ export const deletebooking = (bookingId) => (dispatch) => {
                 throw error;
             })
         .then(response => response.json())
-        .then(bookings => { console.log('Booking Deleted', bookings); dispatch(fetchbookings()); })
+        .then(bookings => { dispatch(fetchbookings()); })
         .catch(error => dispatch(bookingFailed(error.message)));
 };
 
@@ -475,7 +462,6 @@ export const postFeedback = (feedback) => (dispatch) => {
         ServiceProvider_Username:feedback.ServiceProvider_Username,
         Description:feedback.Description
     }
-    console.log('Feedback: ', newFeedback);
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
 
@@ -504,7 +490,6 @@ export const postFeedback = (feedback) => (dispatch) => {
         .then(response => response.json())
         .then(response => { alert("Feedback Info Successfully!!"); dispatch(addfeedback(response)); dispatch(fetchfeedbacks()); })
         .catch(error => {
-            console.log('Feedback ', error.message);
             alert('Feedback could not be added\nError: ' + error.message);
         })
 }
