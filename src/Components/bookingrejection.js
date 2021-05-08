@@ -57,10 +57,10 @@ export default function BookingRejection({ bookings }) {
     rows: bookings
   });
     return (
-      <div>
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12 container-fluid">
-            <h2 className="feature-heading ">Booking Rejection</h2>
+            <h2 className="feature-heading ">Bookings</h2>
             <hr className="feature-line" />
           </div>
         </div>
