@@ -35,9 +35,12 @@ class Navbar1 extends Component{
         return(
             
             <Navbar light style={{backgroundColor:"#14274e"}}   expand="sm">
-                    <NavbarBrand href="/home">
-                    <img src="./images/my help logo light.png" width="200"
+                    <NavbarBrand>
+                        <Link to='/home'>
+                        <img src="./images/my help logo light.png" width="200"
                                 alt="MyHelpLogo" />
+                        </Link>
+                    
                     </NavbarBrand>
                         <NavbarToggler style={{backgroundColor:"white"}}  onClick={this.toggleNav} />
                         <Collapse  isOpen={this.state.isNavOpen} navbar>
