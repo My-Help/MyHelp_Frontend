@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Jumbotron} from 'reactstrap';
 import Header from './Header'
+import {Link} from 'react-router-dom';
 class Home extends Component{
     
     render(){
@@ -23,7 +24,7 @@ class Home extends Component{
                                 <h5 className="card-title col-6 mb-5" >Plumber</h5>
                             </div>
                             
-                            <a href="/PlumberView" className="card-link">Details</ a>
+                            <Link to="/PlumberView" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
@@ -33,7 +34,7 @@ class Home extends Component{
                         <div className="card-body">
                             <h5 className="card-title mb-5">Carpenter</h5>
                             
-                            <a href="/CarpenterView" className="card-link">Details</ a>
+                            <Link to="/CarpenterView" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
@@ -43,7 +44,7 @@ class Home extends Component{
                         <div className="card-body">
                             <h5 className="card-title mb-5">Electrician</h5>
                             
-                            <a href="/ElectricianView" className="card-link">Details</ a>
+                            <Link to="/ElectricianView" className="card-link">Details</ Link>
                         </div>
                     </div>
                     
@@ -56,7 +57,7 @@ class Home extends Component{
                         <div className="card-body">
                             <h5 className="card-title mb-5">AC Service/Repair</h5>
                             
-                            <a href="/ACView" className="card-link">Details</ a>
+                            <Link to="/ACView" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
@@ -66,7 +67,7 @@ class Home extends Component{
                         <div className="card-body">
                             <h5 className="card-title mb-5">Barber</h5>
                             
-                            <a href="/BarberView" className="card-link">Details</ a>
+                            <Link to="/BarberView" className="card-link">Details</ Link>
                         </div>
                         </div>
                 </div>
@@ -76,7 +77,7 @@ class Home extends Component{
                         <div className="card-body">
                             <h5 className="card-title mb-5">Appliance Repair</h5>
                             
-                            <a href="/ApplianceView" className="card-link">Details</ a>
+                            <Link to="/ApplianceView" className="card-link">Details</ Link>
                         </div>
                     </div>
                     

@@ -195,7 +195,7 @@ class CustomerMainComponent extends Component{
                 </div>
                 <div className="col-md-9">
                     <Switch>
-                        <Route path="/Customer/Profile" component={()=><CustomerProfile customer={this.state.customer} />}/>
+                        <Route path="/Customer/Profile" component={()=><CustomerProfile customer={this.state.customer} isLoading={this.props.customers.isLoading} />}/>
                         <Route path="/Customer/UpdateProfile" component={()=><CustomerUpdateProfile customer={this.state.customer} updateCustomerInfo ={this.props.updateCustomerInfo}/>}  />
                         <Route path="/Customer/services" component={()=><Services/>} />
                         <Route path="/Customer/Plumbers" component={()=><CustomerPlumbers plumbers={this.state.Plumbers.sort((a,b)=>b.Feedback_count-a.Feedback_count)}/>}/>
