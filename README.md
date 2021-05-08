@@ -3,7 +3,7 @@
 MyHelp provides local service providers a platform to provide services to the customer and increase their reach. It also helps customers book reliable home services like beauty services, massage therapy, cleaning, plumbing,carpentry, appliance repair, painting etc to empower millions of service professionals across the world to deliver services at home like never before.
 
 
- **MyHelp is live at** https://quirky-pike-20120b.netlify.app/ 
+ **MyHelp is live at** https://myhelp.netlify.app/
 ***
 
 ## Motivation
