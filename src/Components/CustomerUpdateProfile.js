@@ -79,17 +79,17 @@ class CustomerUpdateProfile extends Component {
             this.state.City);
         return(
             
-            <div>
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col-12 container-fluid">
                         <h2 className="feature-heading ">Update Your Profile</h2>
                         <hr className="feature-line" />
                     </div>
                 </div>
-                <Form className="myForm" onSubmit={this.handleSubmit}>
-                    <Row form>
-                        <Col md={6}>
-                            <FormGroup>
+                <Form className="container-fluid myForm" onSubmit={this.handleSubmit}>
+                    <Row className="container-fluid" form>
+                        <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="Name">Name</Label>
                                 <Input required type="text" id="Name" name="Name"
                                     value={this.state.Name}
@@ -97,8 +97,8 @@ class CustomerUpdateProfile extends Component {
                                 <FormFeedback>{errors.Name}</FormFeedback>
                             </FormGroup>
                         </Col>
-                        <Col md={6}>
-                            <FormGroup>
+                        <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
 
                                 <Label htmlFor="MobileNo">Mobile Number</Label>
                                 <Input type="text" id="MobileNo" name="MobileNo"
@@ -108,9 +108,9 @@ class CustomerUpdateProfile extends Component {
                             </FormGroup>
                         </Col>
                     </Row>
-                    <Row form>
-                        <Col md={6}>
-                            <FormGroup>
+                    <Row className="container-fluid" form>
+                        <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="Gender">Gender</Label>
                                 <Input required type="select" name="Gender" id="Gender" value={this.state.Gender} className="form-control"
                                         onChange={this.handleInputChange} >
@@ -121,8 +121,8 @@ class CustomerUpdateProfile extends Component {
                                 <FormFeedback>{errors.Gender}</FormFeedback>
                             </FormGroup>
                         </Col>
-                        <Col md={6}>
-                            <FormGroup>
+                        <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="Address">Address</Label>
                                 <Input type="text" id="Address" name="Address"
                                     value={this.state.Address}
@@ -130,10 +130,10 @@ class CustomerUpdateProfile extends Component {
                             </FormGroup>
                         </Col>
                     </Row>
-                    <Row form>
+                    <Row className="container-fluid" form>
                         
-                        <Col md={6}>
-                            <FormGroup>
+                        <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="City">City</Label>
                                 <Input type="text" id="City" name="City"
                                     value={this.state.City}
@@ -142,8 +142,8 @@ class CustomerUpdateProfile extends Component {
                             </FormGroup>
                         </Col>
 
-                        <Col md={6}>
-                            <FormGroup>
+                        <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="Email">Email</Label>
                                 <Input type="text" id="Email" name="Email"
                                     value={this.state.Email}
@@ -153,7 +153,7 @@ class CustomerUpdateProfile extends Component {
                         </Col>
                     </Row>
                     
-                    <Button type="submit" className="mb-2" style={{backgroundColor:"#14274e"}}>
+                    <Button type="submit" className="ml-2 mb-2" style={{backgroundColor:"#14274e"}}>
                         Update
                     </Button>
                 </Form>
