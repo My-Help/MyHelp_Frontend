@@ -140,7 +140,7 @@ class ServiceProviderUpdateProfile extends Component {
                     </Row>
                     <Row className="container-fluid" form>
                         <Col className="container-fluid" md={6}>
-                            <FormGroup>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="City">City</Label>
                                 <Input type="text" id="City" name="City"
                                     value={this.state.City}
@@ -150,7 +150,7 @@ class ServiceProviderUpdateProfile extends Component {
                         </Col>
 
                         <Col className="container-fluid" md={6}>
-                            <FormGroup>
+                            <FormGroup className="container-fluid">
                                 <Label htmlFor="Email">Email</Label>
                                 <Input type="text" id="Email" name="Email"
                                     value={this.state.Email}
@@ -162,15 +162,15 @@ class ServiceProviderUpdateProfile extends Component {
 
 
                     <Row className="container-fluid" form>
-                    <Col md={6}>
-                            <FormGroup>
+                    <Col className="container-fluid" md={6}>
+                            <FormGroup className="container-fluid">
                             <Label htmlfor="Description">Description</Label>
                                     <Input required type="textarea" rows="3" name="Description" id="Description" value={this.state.Description}
                                     onChange={this.handleInputChange}  />
                             </FormGroup>
                         </Col>
                         <Col className="container-fluid" md={6}>
-                            <FormGroup>
+                            <FormGroup className="container-fluid">
                             <Label htmlfor="Price">Average Price</Label>
                                     <Input required type="number" name="Price" id="Price" placeholder="Average Price in Rupees" value={this.state.Price}
                                         onChange={this.handleInputChange}  />
@@ -180,7 +180,7 @@ class ServiceProviderUpdateProfile extends Component {
                         
                     </Row>
                     
-                    <Button  type="submit" className="mb-2 container-fluid" style={{backgroundColor:"#14274e"}}>
+                    <Button  type="submit" className="ml-2 mb-2" style={{backgroundColor:"#14274e"}}>
                         Update
                     </Button>
                 </Form>
