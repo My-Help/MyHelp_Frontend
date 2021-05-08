@@ -221,7 +221,7 @@ if(initialState.customer_or_service_provider=="false"){
             </div>
             <div className="col-5" >
             <Card className=" mt-5 mb-5 ">
-                    <CardHeader className="color mt-3 d-flex justify-content-start ml-3 mr-3 " ><h4 className=" mt-2 " style={{fontSize:"100%"}}>Customer Information</h4></CardHeader>
+                    <CardHeader className="color mt-3 d-flex justify-content-start" ><h4 className=" mt-2 " style={{fontSize:"70%"}}>Customer Information</h4></CardHeader>
 
                     {
                         <CardBody>
@@ -290,7 +290,7 @@ else if(initialState.customer_or_service_provider=="true"){
             </div>
             <div className="col-5" >
             <Card className=" mt-5 mb-5 ">
-                    <CardHeader className="color mt-3 d-flex justify-content-start ml-3 mr-3 "  ><h4 className=" mt-2 " style={{fontSize:"100%"}}>Service Provider Information</h4></CardHeader>
+                    <CardHeader className="color mt-3 d-flex justify-content-start"  ><h4 className=" mt-2 " style={{fontSize:"70%"}}>Service Provider Information</h4></CardHeader>
 
                     {
                         <CardBody>
