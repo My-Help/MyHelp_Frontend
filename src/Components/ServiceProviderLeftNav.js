@@ -32,16 +32,16 @@ export default class ServiceProviderLeftNav extends Component {
               </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/ServiceProvider/Bookings">
+                <Link className="nav-link" to="/ServiceProvider/BookingsCompleted">
                 <span className="navcol">
-                <i class="far fa-file-alt"></i> Bookings Completed
+                <i class="far fa-check-square" aria-hidden="true"></i> Bookings Completed
                   </span>
               </Link>
               </NavItem>
               <NavItem>
-                <Link className="nav-link" to="/ServiceProvider/Bookings Rejection">
+                <Link className="nav-link" to="/ServiceProvider/Bookings">
                 <span className="navcol">
-                <i class="fas fa-trash-alt    "></i> Bookings
+                <i class="far fa-file-alt"></i> Bookings
                   </span>
                 </Link>
               </NavItem>

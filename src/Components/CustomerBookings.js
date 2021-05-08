@@ -44,7 +44,7 @@ export default function CustomerBookings({ bookings }) {
 
   });
     return (
-      <div>
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12 container-fluid">
             <h2 className="feature-heading "> Your Bookings</h2>

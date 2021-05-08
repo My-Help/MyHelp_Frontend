@@ -180,7 +180,7 @@ class ServiceProviderUpdateProfile extends Component {
                         
                     </Row>
                     
-                    <Button  type="submit" className="ml-2 mb-2" style={{backgroundColor:"#14274e"}}>
+                    <Button  type="submit" style={{backgroundColor:"#14274e",marginLeft:"30px"}}>
                         Update
                     </Button>
                 </Form>
