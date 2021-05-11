@@ -39,7 +39,7 @@ export default function CustomerBookedServices({ bookings }) {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12 container-fluid">
-            <h2 className="feature-heading "> Avail Services</h2>
+            <h2 className="feature-heading "> Previous Bookings</h2>
             <hr className="feature-line" />
           </div>
         </div>
