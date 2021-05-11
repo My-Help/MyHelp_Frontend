@@ -21,7 +21,7 @@ function Contact(props) {
     const handleSubmit = (event) => {
         //const history = useHistory();
         const message = initialState.message+"%0AWith Regards%0A"+initialState.name + "%0A"+ initialState.email
-        window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=MyHelpPEC@gmail.com&su=${initialState.subject}&body=${message}`); event.preventDefault();
+        window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=pecmyhelp@gmail.com&su=${initialState.subject}&body=${message}`); event.preventDefault();
     }
     const handleInputChange = (event) => {
         const target = event.target;
