@@ -43,7 +43,7 @@ export default class CustomerLeftNav extends Component {
               <NavItem>
                 <Link className="nav-link" to="/Customer/AvailServices">
                 <span className="navcol">
-                <i class="fab fa-resolving"></i> AvailServices
+                <i class="fab fa-resolving"></i> Previous Bookings
                   </span>
                 </Link>
               </NavItem>
